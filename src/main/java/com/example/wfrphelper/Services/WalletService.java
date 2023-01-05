@@ -1,5 +1,6 @@
-package com.example.wfrphelper.model;
+package com.example.wfrphelper.Services;
 
+import com.example.wfrphelper.model.Wallet;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

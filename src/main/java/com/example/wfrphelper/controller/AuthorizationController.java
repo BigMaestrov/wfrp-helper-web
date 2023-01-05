@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AuthorizationController {
-    @RequestMapping("/authorization/{color}")
-    public String home(@PathVariable String color, Model page) {
+    @RequestMapping("/authorization")
+    public String home( Model page) {
         page.addAttribute("login", "bigmaestro");
         page.addAttribute("password", "123");
         page.addAttribute("username", "Katy");
-        page.addAttribute("color", color);
+        page.addAttribute("color");
         return "authorization.html";
     }
 }

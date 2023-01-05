@@ -1,12 +1,6 @@
 package com.example.wfrphelper.model;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
 public abstract class Character extends Entity {
     String name;
-    @Autowired
     Wallet wallet;
     String talents;
     String stuff;

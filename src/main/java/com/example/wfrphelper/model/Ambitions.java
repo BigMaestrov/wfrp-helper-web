@@ -1,5 +1,8 @@
 package com.example.wfrphelper.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Ambitions {
     String shortAmbitions;
     String longAmbitions;

@@ -1,5 +1,8 @@
 package com.example.wfrphelper.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public abstract class Movement {
     int movement;
     int walk;
@@ -9,6 +12,9 @@ public abstract class Movement {
         this.movement = movement;
         this.walk = walk;
         this.run = run;
+    }
+
+    public Movement() {
     }
 
     public int getMovement() {

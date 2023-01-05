@@ -1,7 +1,7 @@
 package com.example.wfrphelper.controller;
 
 import com.example.wfrphelper.model.Wallet;
-import com.example.wfrphelper.model.WalletService;
+import com.example.wfrphelper.Services.WalletService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;

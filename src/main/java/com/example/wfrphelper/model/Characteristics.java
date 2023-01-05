@@ -1,5 +1,7 @@
 package com.example.wfrphelper.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Class for storing and exchanging money
  * goldCrown = 20 silverShillings = 240 brassPennies
@@ -8,6 +10,7 @@ package com.example.wfrphelper.model;
  * @version 1.0
  * @autor Nikita Egorov
  */
+@Component
 public abstract class Characteristics {
     int movement;
     int weaponSkill;
@@ -21,9 +24,7 @@ public abstract class Characteristics {
     int willPower;
     int fellowship;
 
-    public Characteristics(int movement, int weaponSkill, int ballisticSkill, int strength, int toughness,
-                           int initiative, int dexterity, int leadership, int intelligence, int willPower,
-                           int fellowship) {
+    public Characteristics(int movement, int weaponSkill, int ballisticSkill, int strength, int toughness, int initiative, int dexterity, int leadership, int intelligence, int willPower, int fellowship) {
         this.movement = movement;
         this.weaponSkill = weaponSkill;
         this.ballisticSkill = ballisticSkill;
