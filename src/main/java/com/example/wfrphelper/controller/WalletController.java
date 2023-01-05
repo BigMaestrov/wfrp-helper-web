@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class WalletController {
 
-    @GetMapping("/")
+    @GetMapping("/wallet")
     public String home() {
-        return "home";
+        return "home.html";
     }
 }
 

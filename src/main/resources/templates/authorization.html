@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/authorization.css" type="text/css">
+    <title>Authorization</title>
+</head>
+<body id="body">
+<div id="div">
+    <header id="title">Authorization</header>
+    <header id="login">Login:</header>
+    <input type="text" name="userName"  th:value="${login}" />
+    <header id="password">Password:</header>
+    <input type="text" name="userPassword"  th:value="${password}">
+    <button id="button">Enter</button>
+</div>
+</body>
+</html>
