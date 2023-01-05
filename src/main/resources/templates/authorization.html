@@ -11,7 +11,7 @@
     <header id="login">Login:</header>
     <input type="text" name="userName"  th:value="${login}" />
     <header id="password">Password:</header>
-    <input type="text" name="userPassword"  th:value="${password}">
+    <input type="text"  name="userPassword" th:style="'color:' + ${color}" th:value="${password}">
     <button id="button">Enter</button>
 </div>
 </body>
