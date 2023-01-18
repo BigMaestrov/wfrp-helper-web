@@ -1,5 +1,7 @@
 package com.example.wfrphelper;
 
+import com.example.wfrphelper.model.Item;
+import com.example.wfrphelper.model.Items;
 import com.example.wfrphelper.model.Wallet;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -24,7 +26,15 @@ public class Main {
         }
 
 */
-        SpringApplication.run(Main.class, args);
+        //SpringApplication.run(Main.class, args);
+
+        Items items = new Items();
+        for(int i=0;i<3;i++){
+            items.getItemList().add(new Item("name"+i, "date"+i, 1, 2));
+        }
+        for(int i=0;i<3;i++){
+            System.out.println(items.getItemList().get(i).toString());
+        }
     }
 }
 

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Home Page</title>
 </head>
-<body>
-<h1>Welcome!</h1>
+<body style="background-color: #b3b3b3">
+<h1>Welcome, <span th:text="${login}"></span></h1>
+<a href="/main?Logout">Log out</a>
 </body>
 </html>

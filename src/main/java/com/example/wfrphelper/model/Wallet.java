@@ -13,7 +13,6 @@ import java.io.*;
  */
 @Component
 public class Wallet {
-    String owner;
     int goldCrown;
     int silverShillings;
     int brassPennies;
@@ -22,29 +21,18 @@ public class Wallet {
         setGoldCrown(0);
         setSilverShillings(0);
         setBrassPennies(0);
-        setOwner("None");
     }
 
     public Wallet(int goldCrown, int silverShillings, int brassPennies) {
         addBrassPennies(brassPennies);
         addSilverShillings(silverShillings);
         addGoldCrown(goldCrown);
-        setOwner("None");
     }
 
     public Wallet(int goldCrown, int silverShillings, int brassPennies, String owner) {
         addBrassPennies(brassPennies);
         addSilverShillings(silverShillings);
         addGoldCrown(goldCrown);
-        setOwner(owner);
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
     }
 
     public int getGoldCrown() {
@@ -119,7 +107,7 @@ public class Wallet {
     }
 
     public String getWallet() {
-        return getOwner() + " " + getGoldCrown() + " " + getSilverShillings() + " " + getBrassPennies();
+        return getGoldCrown() + " " + getSilverShillings() + " " + getBrassPennies();
     }
 
     public void saveToTxtFile(String filePath) {
@@ -135,7 +123,6 @@ public class Wallet {
         try {
             BufferedReader br = new BufferedReader(new FileReader(filePath));
             String[] s = br.readLine().split(" ");
-            setOwner(s[0]);
             setGoldCrown(Integer.parseInt(s[1]));
             setSilverShillings(Integer.parseInt(s[2]));
             setBrassPennies(Integer.parseInt(s[3]));

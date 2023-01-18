@@ -30,7 +30,6 @@ public class WalletController {
             @RequestParam int pennies,
             Model model) {
         Wallet w = new Wallet();
-        w.setOwner(owner);
         w.setGoldCrown(crown);
         w.setSilverShillings(shillings);
         w.setBrassPennies(pennies);

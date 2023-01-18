@@ -23,7 +23,7 @@ public abstract class Characteristics {
     int intelligence;
     int willPower;
     int fellowship;
-
+/*
     public Characteristics(int movement, int weaponSkill, int ballisticSkill, int strength, int toughness, int initiative, int dexterity, int leadership, int intelligence, int willPower, int fellowship) {
         this.movement = movement;
         this.weaponSkill = weaponSkill;
@@ -36,7 +36,7 @@ public abstract class Characteristics {
         this.intelligence = intelligence;
         this.willPower = willPower;
         this.fellowship = fellowship;
-    }
+    }*/
 
     public int getMovement() {
         return movement;

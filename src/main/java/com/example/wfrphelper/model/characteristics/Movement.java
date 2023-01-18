@@ -1,4 +1,4 @@
-package com.example.wfrphelper.model;
+package com.example.wfrphelper.model.characteristics;
 
 import org.springframework.stereotype.Component;
 
@@ -41,3 +41,4 @@ public abstract class Movement {
         this.run = run;
     }
 }
+

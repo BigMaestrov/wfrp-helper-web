@@ -1,21 +1,30 @@
 package com.example.wfrphelper.processors;
 
+import com.example.wfrphelper.Services.ClientService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
 @Component
 @RequestScope
 public class AuthorizationProcessor {
-    String login;
-    String password;
+    private String login;
+    private String password;
+    private final ClientService clientService;
+
+    public AuthorizationProcessor(ClientService clientService) {
+        this.clientService = clientService;
+    }
+
     public boolean login() {
         String username = this.getLogin();
         String password = this.getPassword();
+
+        boolean loginResult = false;
         if ("admin".equals(username) && "admin".equals(password)) {
-            return true;
-        } else {
-            return false;
+            loginResult = true;
+            clientService.setUsername(username);
         }
+        return loginResult;
     }
 
     public String getLogin() {
