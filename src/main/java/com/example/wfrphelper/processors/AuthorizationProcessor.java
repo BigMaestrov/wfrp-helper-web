@@ -1,6 +1,6 @@
 package com.example.wfrphelper.processors;
 
-import com.example.wfrphelper.Services.ClientService;
+import com.example.wfrphelper.services.PlayerService;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.RequestScope;
 
@@ -9,10 +9,10 @@ import org.springframework.web.context.annotation.RequestScope;
 public class AuthorizationProcessor {
     private String login;
     private String password;
-    private final ClientService clientService;
+    private final PlayerService playerService;
 
-    public AuthorizationProcessor(ClientService clientService) {
-        this.clientService = clientService;
+    public AuthorizationProcessor(PlayerService playerService) {
+        this.playerService = playerService;
     }
 
     public boolean login() {
@@ -22,7 +22,7 @@ public class AuthorizationProcessor {
         boolean loginResult = false;
         if ("admin".equals(username) && "admin".equals(password)) {
             loginResult = true;
-            clientService.setUsername(username);
+            playerService.setUsername(username);
         }
         return loginResult;
     }

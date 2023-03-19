@@ -1,10 +1,7 @@
 package com.example.wfrphelper.controller;
 
-import com.example.wfrphelper.model.Wallet;
-import com.example.wfrphelper.Services.WalletService;
+import com.example.wfrphelper.services.WalletService;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class WalletController {
@@ -14,7 +11,7 @@ public class WalletController {
     public WalletController(WalletService walletService) {
         this.walletService = walletService;
     }
-
+/*
     @GetMapping("/wallets")
     public String home(Model model) {
         var wallets = walletService.findAll();
@@ -37,6 +34,6 @@ public class WalletController {
         var wallets = walletService.findAll();
         model.addAttribute("wallets", wallets);
         return "wallets.html";
-    }
+    }*/
 }
 

@@ -26,15 +26,7 @@ public class Main {
         }
 
 */
-        //SpringApplication.run(Main.class, args);
-
-        Items items = new Items();
-        for(int i=0;i<3;i++){
-            items.getItemList().add(new Item("name"+i, "date"+i, 1, 2));
-        }
-        for(int i=0;i<3;i++){
-            System.out.println(items.getItemList().get(i).toString());
-        }
+        SpringApplication.run(Main.class, args);
     }
 }
 
