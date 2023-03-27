@@ -10,6 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Service
+@Entity
 public class PlayerService {
 
     private String login;
@@ -19,8 +20,6 @@ public class PlayerService {
     public void setUsername(String login) {
         this.login = login;
     }
-
-    //Из гайда с javarush
 
     //Хранилище игроков
     private static final Map<Integer, Player> PLAYER_REPOSITORY_MAP = new HashMap<>();

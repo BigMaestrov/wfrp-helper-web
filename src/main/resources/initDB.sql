@@ -1,7 +1,8 @@
-CREATE TABLE IF NOT EXISTS master
+CREATE TABLE IF NOT EXISTS masters
 (
-    id    BIGSERIAL PRIMARY KEY ,
-    player_id  BIGSERIAL ,
-    login VARCHAR(20) NOT NULL ,
-    password VARCHAR(20)  NOT NULL
+   id    BIGSERIAL PRIMARY KEY ,
+   player_id  BIGSERIAL ,
+   login VARCHAR(20) NOT NULL ,
+   password VARCHAR(20)  NOT NULL
 );
+DROP TABLE IF EXISTS players

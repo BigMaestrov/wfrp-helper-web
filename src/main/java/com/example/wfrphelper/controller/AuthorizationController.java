@@ -33,17 +33,5 @@ public class AuthorizationController {
         }
         return "authorization.html";
     }
-
-    @GetMapping("/france")
-    public ResponseEntity<Wallet> france() {
-        Wallet wallet = new Wallet(1, 2, 3, "name");
-        return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
-                .header("continent", "1")
-                .header("capital", "2")
-                .header("favorite_food", "3")
-                .header("favorite_food", "ownerName")
-                .body(wallet);
-    }
 }
 
