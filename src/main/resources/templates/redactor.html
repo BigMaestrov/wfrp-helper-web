@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Player redactor</title>
+</head>
+<body id="body" style="background-color: #b3b3b3">
+<h1>Player redactor</h1>
+<form th:action="@{/redactor}" method="post">
+  <label for="playerID">PlayerID:</label>
+  <input type="playerID" id="playerID" name="playerID"><br>
+  <label for="login">Username:</label>
+  <input type="text" id="login" name="login"><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password"><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br>
+  <button type="submit">Redactor</button>
+</form>
+</body>
+</html>

@@ -72,6 +72,45 @@ public class PlayerController {
         return "register";
     }
 
+    @PostMapping("/delete")
+    public String addPlayer(@RequestParam("playerID") Long playerID) {
+        try (Connection conn = dataSource.getConnection()) {
+            String sql = "DELETE FROM players WHERE id = ?";
+            jdbcTemplate.update(sql, playerID);
+        } catch (SQLException e) {
+            // обработка ошибки
+        }
+        return "redirect:/players";
+    }
+
+    @GetMapping("/delete")
+    public String showDeleteForm(Model model) {
+        model.addAttribute("player", new Player());
+        return "delete";
+    }
+
+    @PostMapping("/redactor")
+    public String redactorPlayer(@RequestParam("login") String login,
+                                 @RequestParam("password") String password,
+                                 @RequestParam("playerID") Long id) {
+        System.out.println(1);
+        try (Connection conn = dataSource.getConnection()) {
+            String sql = "UPDATE players SET login = ?, password = ? WHERE id = ?";
+            jdbcTemplate.update(sql, login, password, id);
+        } catch (SQLException e) {
+            // обработка ошибки
+        }
+        return "redirect:/players";
+    }
+
+    @GetMapping("/redactor")
+    public String showRedactorForm(Model model) {
+        model.addAttribute("player", new Player());
+        return "redactor";
+    }
+
+
+
     //Получение игрока
     @GetMapping(value = "/players/{id}")
     public ResponseEntity<Player> read(@PathVariable(name = "id") int id) {

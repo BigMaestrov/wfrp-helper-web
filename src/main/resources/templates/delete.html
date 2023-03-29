@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+</head>
+<body id="body" style="background-color: #b3b3b3">
+<h1>Player delete</h1>
+<form th:action="@{/delete}" method="post">
+  <label for="playerID">Id:</label>
+  <input type="text" id="playerID" name="playerID"><br>
+  <button type="submit">Delete</button>
+</form>
+</body>
+</html>
