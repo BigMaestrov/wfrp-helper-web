@@ -7,13 +7,22 @@ import java.util.List;
 
 @Component
 public class Player {
-    private int playerId;
+    private long playerId;
     @Autowired
     private List<PlayableCharacter> playableCharactersList;
     private String login;
     private String password;
 
-    public int getPlayerId() {
+    public Player(long playerId, String login, String password) {
+        this.playerId = playerId;
+        this.login = login;
+        this.password = password;
+    }
+
+    public Player() {
+    }
+
+    public long getPlayerId() {
         return playerId;
     }
 

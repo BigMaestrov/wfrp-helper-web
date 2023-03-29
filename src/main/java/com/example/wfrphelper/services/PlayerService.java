@@ -10,7 +10,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 @Service
-@Entity
 public class PlayerService {
 
     private String login;

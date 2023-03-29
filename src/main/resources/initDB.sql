@@ -5,4 +5,9 @@ CREATE TABLE IF NOT EXISTS masters
    login VARCHAR(20) NOT NULL ,
    password VARCHAR(20)  NOT NULL
 );
-DROP TABLE IF EXISTS players
+CREATE TABLE IF NOT EXISTS players
+(
+   id    BIGSERIAL PRIMARY KEY ,
+   login VARCHAR(20) NOT NULL ,
+   password VARCHAR(20)  NOT NULL
+);
