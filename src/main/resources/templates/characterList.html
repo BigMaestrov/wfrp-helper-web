@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Players</title>
+</head>
+<body>
+<h1>Players</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>login</th>
+        <th>password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="Characters : ${characters}">
+        <td th:text="${character.playerId}"></td>
+        <td th:text="${player.login}"></td>
+        <td th:text="${player.password}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

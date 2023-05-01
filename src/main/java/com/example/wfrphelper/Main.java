@@ -33,8 +33,6 @@ public class Main {
 
         try {connection = DriverManager.getConnection(DB_URL, USER, PASS); Statement statement = connection.createStatement();
             //statement.execute("INSERT INTO masters VALUES (3, 1, 'login1', 'password1'), (4, 2, 'login2', 'password2');");
-
-
         } catch (SQLException e) {
             System.out.println("Connection Failed");
             e.printStackTrace();
