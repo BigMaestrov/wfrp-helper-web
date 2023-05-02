@@ -4,23 +4,32 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Resilience {
-    int resilience;
-    int resolve;
+    String resilience;
+    String resolve;
     String motivation;
 
-    public int getResilience() {
+    public Resilience() {
+    }
+
+    public Resilience(String resilience, String resolve, String motivation) {
+        this.resilience = resilience;
+        this.resolve = resolve;
+        this.motivation = motivation;
+    }
+
+    public String getResilience() {
         return resilience;
     }
 
-    public void setResilience(int resilience) {
+    public void setResilience(String resilience) {
         this.resilience = resilience;
     }
 
-    public int getResolve() {
+    public String getResolve() {
         return resolve;
     }
 
-    public void setResolve(int resolve) {
+    public void setResolve(String resolve) {
         this.resolve = resolve;
     }
 

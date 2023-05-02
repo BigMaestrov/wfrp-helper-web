@@ -7,8 +7,51 @@ import java.util.List;
 
 @Component
 public class Master {
+    private long playerId;
     private String login;
     private String password;
     @Autowired
     private List<Player> playersList;
+
+    public Master() {
+    }
+
+    public Master(long playerId, String login, String password, List<Player> playersList) {
+        this.playerId = playerId;
+        this.login = login;
+        this.password = password;
+        this.playersList = playersList;
+    }
+
+    public long getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(long playerId) {
+        this.playerId = playerId;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Player> getPlayersList() {
+        return playersList;
+    }
+
+    public void setPlayersList(List<Player> playersList) {
+        this.playersList = playersList;
+    }
 }

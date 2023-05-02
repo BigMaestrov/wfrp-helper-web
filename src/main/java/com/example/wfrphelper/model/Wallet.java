@@ -13,7 +13,6 @@ import java.io.*;
  */
 @Component
 public class Wallet {
-    int ownerId;
     int goldCrown;
     int silverShillings;
     int brassPennies;
@@ -62,14 +61,6 @@ public class Wallet {
 
     public void addGoldCrown(int number) {
         setGoldCrown(getGoldCrown() + number);
-    }
-
-    public int getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(int ownerId) {
-        this.ownerId = ownerId;
     }
 
     public void addSilverShillings(int number) {
