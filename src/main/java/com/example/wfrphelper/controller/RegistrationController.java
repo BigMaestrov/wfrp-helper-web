@@ -27,30 +27,46 @@ public class RegistrationController {
         this.registrationService = registrationService;
     }
 
-    @PostMapping("/register")
+    @PostMapping("/registration")
     public String addPlayer(@RequestParam("login") String login,
                             @RequestParam("password") String password,
-                            @RequestParam("is_master") boolean is_master) {
+                            @RequestParam(name = "is_master", defaultValue = "false") boolean is_master) {
         if(is_master){
             try (Connection conn = dataSource.getConnection()) {
-                String sql = "INSERT INTO players (login, password) VALUES (?, ?)";
+                String sql = "INSERT INTO master (login, password) VALUES (?, ?)";
                 PreparedStatement ps = conn.prepareStatement(sql);
                 ps.setString(1, login);
                 ps.setString(2, password);
                 ps.executeUpdate();
             } catch (SQLException e) {
-                // обработка ошибки
+                System.err.println(e);
+                return "redirect:/registrationFailed";
             }
         } else{
-
+            try (Connection conn = dataSource.getConnection()) {
+                String sql = "INSERT INTO player (login, password) VALUES (?, ?)";
+                PreparedStatement ps = conn.prepareStatement(sql);
+                ps.setString(1, login);
+                ps.setString(2, password);
+                ps.executeUpdate();
+            } catch (SQLException e) {
+                System.err.println(e);
+                return "redirect:/registrationFailed";
+            }
         }
 
         return "redirect:/authorization";
     }
 
-    @GetMapping("/register")
+    @GetMapping("/registration")
     public String showRegistrationForm(Model model) {
         model.addAttribute("player", new Player());
-        return "register";
+        return "registration";
+    }
+
+    @GetMapping("/registrationFailed")
+    public String showRegistrationFailedForm(Model model) {
+        model.addAttribute("player", new Player());
+        return "registrationFailed";
     }
 }

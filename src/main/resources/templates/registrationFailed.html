@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Authorization</title>
+  <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+
+    input[type="text"]{
+        width: 200px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 100px;
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    </style>
+</head>
+<body style="background-color: #D9D9D9">
+<div id="container">
+  <form th:action="@{/registration}" method="post">
+    <label for="login">Логин:</label>
+    <input type="text" id="login" name="login">
+    <label style="color: red;">ЛОГИН УЖЕ ЗАНЯТ</label>
+    <label for="password">Пароль:</label>
+    <input type="text" id="password" name="password">
+    <label for="is_master">Ведущий:</label>
+    <input type="checkbox" id="is_master" name="is_master">
+    <button type="submit">Сохранить</button>
+  </form>
+</div>
+</body>
+</html>

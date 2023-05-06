@@ -7,7 +7,6 @@ import java.util.List;
 
 @Component
 public class Master {
-    private long playerId;
     private String login;
     private String password;
     @Autowired
@@ -17,18 +16,9 @@ public class Master {
     }
 
     public Master(long playerId, String login, String password, List<Player> playersList) {
-        this.playerId = playerId;
         this.login = login;
         this.password = password;
         this.playersList = playersList;
-    }
-
-    public long getPlayerId() {
-        return playerId;
-    }
-
-    public void setPlayerId(long playerId) {
-        this.playerId = playerId;
     }
 
     public String getLogin() {
