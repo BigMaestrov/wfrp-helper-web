@@ -14,8 +14,8 @@ public class AuthorizationProcessor {
     public AuthorizationProcessor(PlayerService playerService) {
         this.playerService = playerService;
     }
-
-    public boolean login() {
+/*
+   public boolean login() {
         String username = this.getLogin();
         String password = this.getPassword();
 
@@ -25,7 +25,7 @@ public class AuthorizationProcessor {
             playerService.setUsername(username);
         }
         return loginResult;
-    }
+    }*/
 
     public String getLogin() {
         return login;

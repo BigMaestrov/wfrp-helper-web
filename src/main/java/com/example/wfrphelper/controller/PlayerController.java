@@ -31,12 +31,16 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
+
+}
+/*
     @PostMapping(value = "/players")
     public ResponseEntity<?> create(@RequestBody Player player) {
         playerService.create(player);
         return new ResponseEntity<>(HttpStatus.CREATED);
-    }
+    }*/
 
+    /*
     //Получение всех игроков
     @GetMapping(value = "/players")
     public String getPlayers(Model model) {
@@ -64,13 +68,14 @@ public class PlayerController {
             // обработка ошибки
         }
         return "redirect:/players";
-    }
-
+    }*/
+/*
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("player", new Player());
         return "register";
     }
+
 
     @PostMapping("/delete")
     public String addPlayer(@RequestParam("playerID") Long playerID) {
@@ -107,10 +112,10 @@ public class PlayerController {
     public String showRedactorForm(Model model) {
         model.addAttribute("player", new Player());
         return "redactor";
-    }
+    }*/
 
 
-
+/*
     //Получение игрока
     @GetMapping(value = "/players/{id}")
     public ResponseEntity<Player> read(@PathVariable(name = "id") int id) {
@@ -137,6 +142,5 @@ public class PlayerController {
         return deleted
                 ? new ResponseEntity<>(HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
-    }
-}
+    }*/
 
