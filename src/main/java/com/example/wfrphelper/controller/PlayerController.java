@@ -31,7 +31,14 @@ public class PlayerController {
         this.playerService = playerService;
     }
 
-
+    @PostMapping("/playerPage")
+    public String login() {
+        return "redirect:/characterSheet";
+    }
+    @GetMapping("/playerPage")
+    public String showMasterPageForm() {
+        return "playerPage";
+    }
 }
 /*
     @PostMapping(value = "/players")

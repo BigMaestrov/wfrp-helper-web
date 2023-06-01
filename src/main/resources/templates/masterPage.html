@@ -2,25 +2,70 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Players</title>
+    <title>Персонажи</title>
+    <style>
+        #container {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+
+    input[type="text"]{
+        width: 200px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 100px;
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    </style>
 </head>
-<body>
-<h1>Players</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>login</th>
-        <th>password</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="player : ${players}">
-        <td th:text="${player.playerId}"></td>
-        <td th:text="${player.login}"></td>
-        <td th:text="${player.password}"></td>
-    </tr>
-    </tbody>
-</table>
+<body id="container" style="background-color: #D9D9D9">
+<form th:action="@{/masterPage}" method="post">
+    <h1>Персонажи:</h1>
+    <button type="submit">Выбрать персонажа</button>
+</form>
 </body>
 </html>
+
+<!--<h1>Персонажи:</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>login</th>
+            <th>password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="player : ${players}">
+            <td th:text="${player.playerId}"></td>
+            <td th:text="${player.login}"></td>
+            <td th:text="${player.password}"></td>
+            <button type="submit">Выбрать персонажа</button>
+        </tr>
+        </tbody>
+    </table>-->

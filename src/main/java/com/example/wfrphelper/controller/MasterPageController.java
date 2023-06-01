@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.sql.DataSource;
 import java.sql.PreparedStatement;
@@ -15,12 +16,21 @@ import java.util.List;
 
 @Controller
 public class MasterPageController {
-    @Autowired
+   /* @Autowired
     private DataSource dataSource;
     @Autowired
     private JdbcTemplate jdbcTemplate;
-    int masterId;
+    int masterId;*/
 
+
+    @PostMapping("/masterPage")
+    public String login() {
+        return "redirect:/characterSheet";
+    }
+    @GetMapping("/masterPage")
+    public String showMasterPageForm() {
+        return "masterPage";
+    }
     /*
     //Получение всех игроков
     @GetMapping(value = "/masterPage{id}")

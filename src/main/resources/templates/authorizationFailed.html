@@ -3,16 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="/static/css/authorization.css" type="text/css">
-  <title>Authorization</title>
+  <img src="../images/newLogo.png">
+  <style>
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+
+    input[type="text"]{
+        width: 200px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 100px;
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    </style>
 </head>
-<body  id="body" style="background-color: #D9D9D9">
+<body  id="container" style="background-color: #D9D9D9">
 <form th:action="@{/authorization}" method="post">
-  <label for="login">Username:</label>
+  <label for="login">Логин:</label>
   <input type="text" id="login" name="login"><br>
-  <label for="password">Password:</label>
+  <label for="password">Пароль:</label>
   <input type="password" id="password" name="password"><br>
-  <button type="submit">Register</button>
   <label style="color: red;">Аккаунт не найден</label>
+  <button type="submit">Войти</button>
+</form>
+<form th:action="@{/authorization1}" method="post">
+  <button style="position: absolute; top: 65%; left: 45%;" type="submit">Создать</button>
 </form>
 </body>
 </html>

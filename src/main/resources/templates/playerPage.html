@@ -2,10 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Players</title>
+    <title>Персонажи</title>
+    <style>
+        #container {
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 200px;
+    }
+
+    label {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+    }
+
+    input[type="text"]{
+        width: 200px;
+        padding: 5px;
+        margin-left: 10px;
+    }
+
+    button {
+        width: 100px;
+        margin-top: 10px;
+        padding: 5px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    </style>
 </head>
-<body>
-<form th:action="@{/characterSheet}" method="post">
+<body id="container" style="background-color: #D9D9D9">
+<form th:action="@{/playerPage}" method="post">
 <h1>Персонажи:</h1>
     <table>
         <thead>

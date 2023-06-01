@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<form th:action="@{/characterSheet}" method="post">
 <!-- Картинка персонажа и Лист персонажа -->
 <div>
-    <img style="position: absolute; top: 0%; left: 0%;" src="TestCharacterImg.jpg" alt="Пример изображения"
+    <img style="position: absolute; top: 0%; left: 0%;" src="../images/TestCharacterImg.jpg"
          alt="Пример изображения" width="25%" height="50%">
     <object style="position: absolute; top: 0%; left: 25%;"
-            data="List_personazha_interaktivny.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="50%"
+            data="../files/List_personazha_interaktivny.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" width="50%"
             height="100%">
         <p>Ваш браузер не поддерживает отображение PDF-файлов. Вы можете скачать файл здесь: <a
-                href="./templates/List_personazha_interaktivny.pdf">Скачать PDF</a>.</p>
+                href="../files/List_personazha_interaktivny.pdf">Скачать PDF</a>.</p>
     </object>
 </div>
 <!-- Генератор чисел -->
 <div>
     <div style="position: absolute; top: 50%; left: 0%;" width="25%" height="50%">
-        <h1>Генератор случайного числа</h1>
+        <h2>Генератор случайного числа</h2>
         <form>
-            <label for="min">Минимальное значение:</label>
+            <label for="min">Минимальное значение:</label><br>
             <input type="number" id="min" name="min" value="0"><br><br>
-            <label for="max">Максимальное значение:</label>
+            <label for="max">Максимальное значение:</label><br>
             <input type="number" id="max" name="max" value="100"><br><br>
             <button type="button" onclick="generateRandomNumber()">Сгенерировать</button>
         </form>
@@ -36,14 +37,15 @@
 			var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 			document.getElementById("result").innerHTML = randomNumber;
 		}
-
         </script>
     </div>
 </div>
 <div style="position: absolute; top: 0%; left: 75%;" width="25%" height="50%">
     <!-- Инвентарь -->
     <h1 style="text-align: center;">Инвентарь</h1>
+    <textarea style="width: 300px; height: 1500px;"></textarea>
 </div>
+</form>
 </body>
 </html>
 <!--<!DOCTYPE html>
@@ -147,8 +149,7 @@
   <button type="submit">Сохранить</button>
 </form>
 </body>
-</html>
--->
+</html>-->
 
 
 
