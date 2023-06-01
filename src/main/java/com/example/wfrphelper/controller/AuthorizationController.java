@@ -81,6 +81,12 @@ public class AuthorizationController {
         }
         return "redirect:/authorizationFailed";
     }
+
+    @PostMapping("/authorization1")
+    public String login() {
+        return "redirect:/registration";
+    }
+
 /*
     @PostMapping("/authorization")
     public String login2(@RequestParam("login") String login,
