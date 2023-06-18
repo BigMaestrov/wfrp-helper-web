@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @Service
 public class AutorizationService {
     //Хранилище игроков
-    private static final Map<Integer, Player> PLAYER_REPOSITORY_MAP = new HashMap<>();
+    private static final Map<Long, Player> PLAYER_REPOSITORY_MAP = new HashMap<>();
 
     public List<Player> readAll() {
         return new ArrayList<>(PLAYER_REPOSITORY_MAP.values());
@@ -22,7 +22,7 @@ public class AutorizationService {
         return PLAYER_REPOSITORY_MAP.get(id);
     }
 
-    public boolean update(Player player, int id) {
+    public boolean update(Player player, long id) {
         if (PLAYER_REPOSITORY_MAP.containsKey(id)) {
             player.setPlayerId(id);
             PLAYER_REPOSITORY_MAP.put(id, player);

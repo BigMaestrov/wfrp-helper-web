@@ -14,7 +14,7 @@ public class Items {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long items_id;
-    @Autowired
+    @OneToMany(mappedBy = "items")
     private List<Item> itemList;
     private int totalWeight;
 

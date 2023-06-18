@@ -14,21 +14,21 @@ public class PlayableCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long playable_character_id;
     String name;
-    @Autowired
+    @OneToOne(mappedBy = "startCharacteristics_id")
     private Characteristics startCharacteristics;
-    @Autowired
+    @OneToOne(mappedBy = "characteristics_id")
     private Characteristics characteristics;
-    @Autowired
+    @OneToOne(mappedBy = "inventory_id")
     private Inventory inventory;
-    @Autowired
+    @OneToOne(mappedBy = "description_id")
     private Description description;
-    @Autowired
+    @OneToOne(mappedBy = "experience_id")
     private Experience experience;
-    @Autowired
+    @OneToOne(mappedBy = "basicSkills_id")
     private BasicSkills basicSkills;
-    @Autowired
+    @OneToOne(mappedBy = "startBasicSkills_id")
     private BasicSkills startBasicSkills;
-    @Autowired
+    @OneToOne(mappedBy = "fate_id")
     private Fate fate;
 
     public PlayableCharacter(String name, Characteristics startCharacteristics, Characteristics characteristics, Inventory inventory, Description description, Experience experience, BasicSkills basicSkills, BasicSkills startBasicSkills, Fate fate) {

@@ -15,6 +15,9 @@ public class Item {
     private String date;
     private int weight;
     private int value;
+    @ManyToOne
+    @JoinColumn(name = "items_id")
+    private Items items;
 
     public Item(String name, String date, int weight, int value) {
         this.name = name;

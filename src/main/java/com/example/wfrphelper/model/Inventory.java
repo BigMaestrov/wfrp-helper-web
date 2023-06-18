@@ -12,9 +12,9 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long inventory_id;
-    @Autowired
+    @OneToOne(mappedBy = "items_id")
     private Items items;
-    @Autowired
+    @OneToOne(mappedBy = "wallet_id")
     private Wallet wallet;
 
     public Inventory(Items items, Wallet wallet) {

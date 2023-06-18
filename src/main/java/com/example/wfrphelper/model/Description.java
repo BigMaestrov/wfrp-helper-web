@@ -13,8 +13,8 @@ public class Description {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long description_id;
     private String description;
-    @Autowired
+    @OneToOne(mappedBy = "resilience_id")
     private Resilience resilience;
-    @Autowired
+    @OneToOne(mappedBy = "resilience_id")
     private Ambitions ambitions;
 }

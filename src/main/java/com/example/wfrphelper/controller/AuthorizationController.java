@@ -4,7 +4,6 @@ import com.example.wfrphelper.model.mainClasses.Master;
 import com.example.wfrphelper.model.mainClasses.Player;
 import com.example.wfrphelper.processors.AuthorizationProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -19,10 +18,9 @@ import java.util.List;
 
 @Controller
 public class AuthorizationController {
+    /*
     @Autowired
     private DataSource dataSource;
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
     /*
     private final AuthorizationProcessor authorizationProcessor;
 
@@ -48,7 +46,7 @@ public class AuthorizationController {
         return "authorization.html";
     }*/
 
-
+/*
     @PostMapping("/authorization")
     public String login(@RequestParam("login") String login,
                             @RequestParam("password") String password) {

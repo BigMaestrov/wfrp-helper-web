@@ -21,12 +21,12 @@ public class RegistrationService {
     }
 
     //Хранилище игроков
-    private static final Map<Integer, Player> PLAYER_REPOSITORY_MAP = new HashMap<>();
+    private static final Map<Long, Player> PLAYER_REPOSITORY_MAP = new HashMap<>();
     // Переменная для генерации ID кошелька
     private static final AtomicInteger WALLET_ID_HOLDER = new AtomicInteger();
 
     public void create(Player wallet) {
-        final int playerId = WALLET_ID_HOLDER.incrementAndGet();
+        final long playerId = WALLET_ID_HOLDER.incrementAndGet();
         wallet.setPlayerId(playerId);
         PLAYER_REPOSITORY_MAP.put(playerId, wallet);
     }
@@ -39,7 +39,7 @@ public class RegistrationService {
         return PLAYER_REPOSITORY_MAP.get(id);
     }
 
-    public boolean update(Player player, int id) {
+    public boolean update(Player player, long id) {
         if (PLAYER_REPOSITORY_MAP.containsKey(id)) {
             player.setPlayerId(id);
             PLAYER_REPOSITORY_MAP.put(id, player);
