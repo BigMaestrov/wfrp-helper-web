@@ -12,9 +12,11 @@ public class Inventory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long inventory_id;
-    @OneToOne(mappedBy = "items_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "items_id")
     private Items items;
-    @OneToOne(mappedBy = "wallet_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "wallet_id")
     private Wallet wallet;
 
     public Inventory(Items items, Wallet wallet) {

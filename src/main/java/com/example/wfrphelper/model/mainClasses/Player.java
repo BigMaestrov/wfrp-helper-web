@@ -13,7 +13,7 @@ public class Player {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long player_id;
-    @Autowired
+    @OneToMany(mappedBy = "playable_character_id")
     private List<PlayableCharacter> playableCharactersList;
     private String login;
     private String password;

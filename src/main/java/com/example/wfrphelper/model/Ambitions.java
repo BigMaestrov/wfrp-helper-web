@@ -13,6 +13,8 @@ public class Ambitions {
     private Long ambition_id;
     String shortAmbitions;
     String longAmbitions;
+    @OneToOne(mappedBy = "ambitions")
+    Description description;
 
     public String getShortAmbitions() {
         return shortAmbitions;

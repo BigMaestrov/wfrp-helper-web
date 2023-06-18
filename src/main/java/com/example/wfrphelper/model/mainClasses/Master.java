@@ -15,16 +15,16 @@ public class Master {
     private Long master_id;
     private String login;
     private String password;
-    @Autowired
-    private List<Player> playersList;
+    @OneToMany(mappedBy = "playable_character_id")
+    private List<PlayableCharacter> playableCharacters;
 
     public Master() {
     }
 
-    public Master(long playerId, String login, String password, List<Player> playersList) {
+    public Master(long playerId, String login, String password, List<PlayableCharacter> playableCharacterList) {
         this.login = login;
         this.password = password;
-        this.playersList = playersList;
+        this.playableCharacters = playableCharacterList;
     }
 
     public String getLogin() {
@@ -43,11 +43,11 @@ public class Master {
         this.password = password;
     }
 
-    public List<Player> getPlayersList() {
-        return playersList;
+    public List<PlayableCharacter> getPlayersList() {
+        return playableCharacters;
     }
 
-    public void setPlayersList(List<Player> playersList) {
-        this.playersList = playersList;
+    public void setPlayersList(List<PlayableCharacter> playersList) {
+        this.playableCharacters = playersList;
     }
 }

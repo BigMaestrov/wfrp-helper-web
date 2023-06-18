@@ -3,14 +3,21 @@ package com.example.wfrphelper;
 import com.example.wfrphelper.model.Item;
 import com.example.wfrphelper.model.Items;
 import com.example.wfrphelper.model.Wallet;
+import com.example.wfrphelper.model.mainClasses.Player;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
 
 import java.sql.*;
 
+@Import(SpringConfig.class)
 @SpringBootApplication
 public class Main {
     static final String DB_URL = "jdbc:postgresql://127.0.0.1:5432/wfrp";

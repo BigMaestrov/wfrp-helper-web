@@ -14,21 +14,36 @@ public class PlayableCharacter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long playable_character_id;
     String name;
-    @OneToOne(mappedBy = "startCharacteristics_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "characteristics_id")
     private Characteristics startCharacteristics;
-    @OneToOne(mappedBy = "characteristics_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "start_characteristics_id")
     private Characteristics characteristics;
-    @OneToOne(mappedBy = "inventory_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "inventory_id")
     private Inventory inventory;
-    @OneToOne(mappedBy = "description_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "description_id")
     private Description description;
-    @OneToOne(mappedBy = "experience_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "experience_id")
     private Experience experience;
-    @OneToOne(mappedBy = "basicSkills_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "basic_skills_id")
     private BasicSkills basicSkills;
-    @OneToOne(mappedBy = "startBasicSkills_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "start_basic_skills_id")
     private BasicSkills startBasicSkills;
-    @OneToOne(mappedBy = "fate_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "fate_id")
     private Fate fate;
 
     public PlayableCharacter(String name, Characteristics startCharacteristics, Characteristics characteristics, Inventory inventory, Description description, Experience experience, BasicSkills basicSkills, BasicSkills startBasicSkills, Fate fate) {

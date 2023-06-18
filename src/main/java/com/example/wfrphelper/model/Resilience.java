@@ -14,6 +14,8 @@ public class Resilience {
     String resilience;
     String resolve;
     String motivation;
+    @OneToOne(mappedBy = "resilience")
+    Description description;
 
     public Resilience() {
     }

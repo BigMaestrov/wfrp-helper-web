@@ -14,7 +14,7 @@ public class Items {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long items_id;
-    @OneToMany(mappedBy = "items")
+    @OneToMany(mappedBy = "items", cascade = CascadeType.ALL)
     private List<Item> itemList;
     private int totalWeight;
 

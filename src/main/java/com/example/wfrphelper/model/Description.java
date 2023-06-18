@@ -13,8 +13,12 @@ public class Description {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long description_id;
     private String description;
-    @OneToOne(mappedBy = "resilience_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "resilience_id")
     private Resilience resilience;
-    @OneToOne(mappedBy = "resilience_id")
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ambition_id")
     private Ambitions ambitions;
 }
