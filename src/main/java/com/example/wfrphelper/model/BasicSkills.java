@@ -2,8 +2,15 @@ package com.example.wfrphelper.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "basic_skills")
 @Component
 public class BasicSkills {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long basic_skills_id;
     //1 value - start, 2 value - numSteps
     private int[] art;
     private int[] athletics;

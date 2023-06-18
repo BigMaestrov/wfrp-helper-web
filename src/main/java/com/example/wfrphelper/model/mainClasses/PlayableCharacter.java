@@ -4,8 +4,15 @@ import com.example.wfrphelper.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "playable_character")
 @Component
 public class PlayableCharacter {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long playable_character_id;
     String name;
     @Autowired
     private Characteristics startCharacteristics;

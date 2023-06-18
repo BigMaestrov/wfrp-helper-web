@@ -3,11 +3,17 @@ package com.example.wfrphelper.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "items")
 @Component
 public class Items {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long items_id;
     @Autowired
     private List<Item> itemList;
     private int totalWeight;

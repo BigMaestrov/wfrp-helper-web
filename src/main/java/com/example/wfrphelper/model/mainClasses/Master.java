@@ -3,10 +3,16 @@ package com.example.wfrphelper.model.mainClasses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "master")
 @Component
 public class Master {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long master_id;
     private String login;
     private String password;
     @Autowired

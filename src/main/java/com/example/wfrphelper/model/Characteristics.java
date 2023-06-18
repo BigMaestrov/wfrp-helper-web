@@ -2,6 +2,8 @@ package com.example.wfrphelper.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
 /**
  * Class for storing and exchanging money
  * goldCrown = 20 silverShillings = 240 brassPennies
@@ -10,8 +12,13 @@ import org.springframework.stereotype.Component;
  * @version 1.0
  * @autor Nikita Egorov
  */
+@Entity
+@Table(name = "characteristics")
 @Component
 public class Characteristics {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long characteristics_id;
     int movement;
     int weaponSkill;
     int ballisticSkill;

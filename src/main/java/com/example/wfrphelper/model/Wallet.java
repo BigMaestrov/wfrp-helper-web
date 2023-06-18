@@ -1,6 +1,7 @@
 package com.example.wfrphelper.model;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
 import java.io.*;
 
 /**
@@ -11,8 +12,13 @@ import java.io.*;
  * @version 1.0
  * @autor Nikita Egorov
  */
+@Entity
+@Table(name = "wallet")
 @Component
 public class Wallet {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long wallet_id;
     int goldCrown;
     int silverShillings;
     int brassPennies;

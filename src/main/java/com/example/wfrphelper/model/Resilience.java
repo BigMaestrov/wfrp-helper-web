@@ -2,8 +2,15 @@ package com.example.wfrphelper.model;
 
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "resilience")
 @Component
 public class Resilience {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long resilience_id;
     String resilience;
     String resolve;
     String motivation;

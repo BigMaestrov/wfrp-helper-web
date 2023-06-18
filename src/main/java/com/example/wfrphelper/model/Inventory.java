@@ -3,8 +3,15 @@ package com.example.wfrphelper.model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "inventory")
 @Component
 public class Inventory {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long inventory_id;
     @Autowired
     private Items items;
     @Autowired
